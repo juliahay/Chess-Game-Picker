@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Chess Game Picker</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div id="container">
+            <!-- WEBSITE TITLE -->
+            <div id="title-div">
+                <h1>Chess Game Picker!</h1>
+            </div>
+
+            <!-- BUTTON -->
+            <div id="selector-button-div">
+                <button id="selector-button">PUSH</button>
+            </div>
+
+            <!-- SELECTOR OPTIONS -->
+            <div id="selector-options-div">
+                <form>
+                    <input type="radio" id="one" name="difficulty" value=1>
+                    <label for="one">Mate in One</label>
+                    <input type="radio" id="two" name="difficulty" value=2>
+                    <label for="two">Mate in Two</label>
+                    <input type="radio" id="three" name="difficulty" value=3>
+                    <label for="three">Mate in Three</label>
+                    <input type="radio" id="any" name="difficulty" value=0 checked>
+                    <label for="any">Any</label>
+                </form>
+            </div>
+        </div>
+
+
+        <script src="scripts/API.js"></script>
+        <script src="scripts/utils.js"></script>
+        <script src="scripts/actions.js"></script>
+        <script src="scripts/index.js"></script>
+    </body>
+</html>

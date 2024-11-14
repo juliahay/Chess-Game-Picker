@@ -1,0 +1,49 @@
+#container {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#title-div {
+    
+}
+
+#selector-button-div {
+    height: 100px;
+}
+
+#selector-button {
+    background-color: #04AA6D;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 50%;
+}
+
+#selector-options-div {
+    height: 100px;
+}
+
+#problem-number-div {
+
+}
+
+#solved-buttons-div {
+
+}
+
+#solved-button {
+
+}
+
+#not-solved-button {
+
+}
+
+
+

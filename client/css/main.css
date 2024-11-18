@@ -6,27 +6,42 @@
 }
 
 #title-div {
-    
 }
 
 #selector-button-div {
-    height: 100px;
+    margin: 50px;
+}
+
+.my-circle-button {
+    position: relative;
+    padding: 100px !important;
+    background-color: green;
+    border-radius: 100%;
+    width: fit-content;
+}
+
+.my-circle-button > .gb-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    margin: 0 !important;
+    background-color: transparent !important;
+    font-size: 16px;
 }
 
 #selector-button {
-    background-color: #04AA6D;
+    background-color: green;
     border: none;
-    color: white;
-    padding: 20px;
     text-align: center;
     text-decoration: none;
-    font-size: 16px;
-    margin: 4px 2px;
-    border-radius: 50%;
+    
 }
 
 #selector-options-div {
     height: 100px;
+    font-size: 20px;
 }
 
 #problem-number-div {

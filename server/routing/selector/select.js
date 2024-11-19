@@ -31,7 +31,7 @@ module.exports = (req, res) => {
             res.status(200).json({message: "All problems in this set have been solved"})
         } else {
             //send problem
-            res.status(200).json(problem)
+            res.status(200).json({problem: problem})
         }
        
     })

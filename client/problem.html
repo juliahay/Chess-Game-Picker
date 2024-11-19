@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/main.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
     </head>
     <body>
         <div id="container">
@@ -16,13 +17,13 @@
 
             <!-- PROBLEM NUMBER -->
             <div id="problem-number-div">
-                <p><span id="problem-number">0000</span></p>
+                <p><span id="problem-number">0001</span></p>
             </div>
 
             <!-- SOLVED OR NOT SOLVED BUTTONS -->
              <div id="solved-buttons-div">
-                <button id="solved-button">Solved</button>
-                <button id="not-solved-button">Not Solved</button>
+                <button id="solved-button" onclick="actions.solved()">Solved</button>
+                <button id="not-solved-button" onclick="actions.notSolved()">Not Solved</button>
              </div>
 
         </div>

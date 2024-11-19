@@ -8,7 +8,7 @@ const middleware = require('./routing/middleware')
 
 const PORT = 3000;
 
-app.use(express.static(path.join(__dirname, "../client"))) // serve static files under the client folder
+//app.use(express.static(path.join(__dirname, "../client"))) // serve static files under the client folder
 
 app.use(bodyParser.urlencoded({  // to support URL-encoded bodies
     extended: true

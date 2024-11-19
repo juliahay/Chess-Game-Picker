@@ -1,26 +1,52 @@
 const db = require("../../db")
-const data = db.getData("/")
 
 module.exports = (req, res) => {
     //putting solved problems in database
+    var data;
+    let difficulty;
 
-    //req params returns the problem number if solved
-    //if solved = -1, not solved
-    let solved = req.params.solved
+    //req params return problem number
+    let problem = parseInt(req.params.problem)
+    //req query returns if problem solved 
+    let solved = req.query.solved
+    console.log(problem, solved)
 
-    if (solved == -1) {
-        //do nothing
+    if (solved === "true") {
+        if (problem >= 1 && problem <= 306) {
+            difficulty = "/mateInOne" 
+        } else if (problem >= 307 && problem <= 3718) {
+            difficulty = "/mateInTwo"
+        } else if (problem >= 3719 && problem <= 4462) {
+            difficulty = "/mateInThree"
+        }
 
-    } else if (solved >= 1 && solved <= 306) {
-        //add to "mate-in-one"
-        
-    } else if (solved >= 307 && solved <= 3718) {
-        //add to "mate-in-two"
-        
-    } else if (solved >= 3719 && solved <= 4462) {
-        //add to "mate-in-three"
+        data = db.getData(difficulty).then((data) => {
+            if (data.includes(problem)) {
+                return res.end("Problem already solved")
+            }
 
-    }
+            for (let i = 0; i < data.length; i++) {
+                if (problem < data[i]) {
+                    data.splice(i, 0, problem)
+                    break;
+                } else if (i == data.length - 1) {
+                    data.push(problem)
+                    break;
+                }
+            }
     
+            if(data.length == 0) {
+                data.push(problem)
+            }
+
+            console.log(difficulty, data)
+            db.push(difficulty, data)
+        })
+
+        res.status(200).json({message: `Problem #${problem} solved`})
+        return;
+    } 
+    
+    res.status(200).json({message: `Problem #${problem} not solved`})
     return;
 }

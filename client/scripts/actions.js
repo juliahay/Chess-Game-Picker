@@ -18,7 +18,7 @@ var actions = {
         API.solvedProblem(problem, true)
             .then((response) => {
                 window.location.href = 'index.html';
-                alert("Problem solved.")
+                
             }).catch(alert)
     },
     notSolved: function() {
@@ -26,7 +26,7 @@ var actions = {
         API.solvedProblem(problem, false)
             .then((response) => {
                 window.location.href = 'index.html';
-                alert("Problem not solved.")
+                
             }).catch(alert)
     },
 

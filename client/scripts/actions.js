@@ -6,9 +6,9 @@ var actions = {
             if (response.message) {
                 alert(response.message)
             } else if (response.problem) {
-                window.location.href = 'problem.html';
-                //document.getElementById("problem-number").innerHTML = response.problem
+                url = 'problem.html?problem=' + encodeURIComponent(response.problem);
                 
+                document.location.href = url;
             }
         }).catch(alert)
     },
